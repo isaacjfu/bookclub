@@ -1,4 +1,7 @@
 /backend/bookclub/data/*
+/backend/bookclub/data/*.json
+/backend/bookclub/data/*.txt
 !/backend/bookclub/data/*.py
 
+/backend/bookclub/bin
 /backend/bookclub/*.json
