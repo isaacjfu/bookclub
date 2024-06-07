@@ -1,0 +1,4 @@
+/backend/bookclub/data/*
+!/backend/bookclub/data/*.py
+
+/backend/bookclub/*.json
