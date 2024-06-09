@@ -13,7 +13,7 @@ public class UsersController: ControllerBase
 
     public UsersController(IUsersRepository usersRepository)
     {
-        this.usersRepository = usersRepository
+        this.usersRepository = usersRepository;
     }
 
     public IActionResult GetUsers()
