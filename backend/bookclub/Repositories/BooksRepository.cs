@@ -1,6 +1,7 @@
 using Bookclub.Interfaces;
 using Bookclub.Models;
 using Bookclub.Data;
+using System.Threading.Tasks;
 
 namespace Bookclub.Repositories;
 
@@ -12,28 +13,28 @@ public class BooksRepository : IBooksRepository
         this.context = context;
     }
 
-    public IEnumerable<Book> GetBooks()
+    public async Task<IEnumerable<Book>> GetBooks()
     {
         return context.Books.ToList();
     }
-    public Book GetBookById(int bookId)
+    public async Task<Book> GetBookById(int bookId)
     {
         return context.Books.Find(bookId);
     }
-    public void InsertBook(Book book)
+    public async Task InsertBook(Book book)
     {
         context.Books.Add(book);
     }
-    public void DeleteBook(int bookId)
+    public async Task DeleteBook(int bookId)
     {
         Book b = context.Books.Find(bookId);
         context.Books.Remove(b);
     }
-    public void UpdateBook(Book book)
+    public async Task UpdateBook(Book book)
     {
         // context.Entry(book).State = EntityState.Modified;
     }
-    public void Save()
+    public async Task Save()
     {
         context.SaveChanges();    
     }

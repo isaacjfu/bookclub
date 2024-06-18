@@ -1,13 +1,13 @@
 using Bookclub.Models;
-
+using System.Threading.Tasks;
 namespace Bookclub.Interfaces;
 
 public interface IClubsRepository
 {
-    IEnumerable<Club> GetClubs();
-    Club GetClubById(int clubId);
-    void InsertClub(Club club);
-    void DeleteClub(int clubId);
-    void UpdateClub(Club club);
-    void Save();
+    Task<IEnumerable<Club>> GetClubs();
+    Task<Club> GetClubById(int clubId);
+    Task InsertClub(Club club);
+    Task DeleteClub(int clubId);
+    Task UpdateClub(Club club);
+    Task Save();
 }
